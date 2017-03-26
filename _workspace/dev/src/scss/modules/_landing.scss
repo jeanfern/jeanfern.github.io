@@ -3,6 +3,7 @@
 ========================================================== */
 .landing-page{
 	position: relative;
+	overflow: hidden;
 	.container-wrapper{
 		width: 100%;
 		max-width: 600px;
@@ -20,11 +21,22 @@
 					display: inline-block;
 					font-size: round(($font-size-base*1.5));
 					a{
+						position: relative;
 						.zmdi-hc-inverse{
 							color: $color-body;
 						}
+						&:after{
+							@include pseudo(inline-block,absolute, attr(alt));
+							@include translate(-50%,0);
+							@include font(false, $font-size-base, #fff, 500, false, false, uppercase);
+							@include anim(350ms, ease-in-out);						
+							opacity: 0;
+						}
 						&:hover{
 							color: rgba(#fff, 0.5);
+							&:after{
+								opacity: 1;
+							}
 						}
 					}
 				}

@@ -6290,7 +6290,8 @@ small {
 >> LANDING PAGE
 ========================================================== */
 .landing-page {
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .landing-page .container-wrapper {
     width: 100%;
     max-width: 600px;
@@ -6312,9 +6313,32 @@ small {
       .landing-page .container-wrapper .social ul li {
         display: inline-block;
         font-size: 21px; }
-        .landing-page .container-wrapper .social ul li a .zmdi-hc-inverse {
-          color: #000; }
-        .landing-page .container-wrapper .social ul li a:hover {
-          color: rgba(255, 255, 255, 0.5); }
+        .landing-page .container-wrapper .social ul li a {
+          position: relative; }
+          .landing-page .container-wrapper .social ul li a .zmdi-hc-inverse {
+            color: #000; }
+          .landing-page .container-wrapper .social ul li a:after {
+            content: attr(alt);
+            display: inline-block;
+            position: absolute;
+            -webkit-transform: translate(-50%, 0);
+            -moz-transform: translate(-50%, 0);
+            -ms-transform: translate(-50%, 0);
+            -o-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+            font-size: 14px;
+            color: #fff;
+            font-weight: 500;
+            text-transform: uppercase;
+            -webkit-transition: 350ms ease-in-out;
+            -moz-transition: 350ms ease-in-out;
+            -o-transition: 350ms ease-in-out;
+            -ms-transition: 350ms ease-in-out;
+            transition: 350ms ease-in-out;
+            opacity: 0; }
+          .landing-page .container-wrapper .social ul li a:hover {
+            color: rgba(255, 255, 255, 0.5); }
+            .landing-page .container-wrapper .social ul li a:hover:after {
+              opacity: 1; }
 
 /*# sourceMappingURL=maps/styles.css.map */
