@@ -21,7 +21,7 @@ gulp.task('default', function(event) {
 });
 
 gulp.task('build', function(event) {
-	sequence('includes', 'sass', 'clean:dist', 'minify:jscss','minify:html',['minify:img','unused:css'], event);
+	sequence('includes', 'sass', 'clean:dist', 'minify:jscss','minify:html',['minify:img'], event);
 });
 
 gulp.task('browsersync', function() {
