@@ -1,0 +1,47 @@
+// _basicarrows.scss
+/* ==========================================================
+>> BASIC ARROWS
+========================================================== */
+@font-face {
+  font-family: "Basic Arrows";
+  src: url("../fonts/basicarrows/basicarrows.eot");
+  src: url("../fonts/basicarrows/basicarrows.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/basicarrows/basicarrows.woff") format("woff"),
+       url("../fonts/basicarrows/basicarrows.ttf") format("truetype"),
+       url("../fonts/basicarrows/basicarrows.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Basic Arrows";
+    src: url("../fonts/basiscarrows/basicarrows.svg") format("svg");
+  }
+}
+
+.ba:before{
+  display: inline-block;
+  font-family: "Arrows";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.ba-close:before { content: "\f100"; }
+.ba-down:before { content: "\f101"; }
+.ba-left:before { content: "\f102"; }
+.ba-right:before { content: "\f103"; }
+.ba-up:before { content: "\f104"; }
+
+$ba-close: "\f100";
+$ba-down: "\f101";
+$ba-left: "\f102";
+$ba-right: "\f103";
+$ba-up: "\f104";

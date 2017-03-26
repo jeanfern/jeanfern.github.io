@@ -1,0 +1,34 @@
+/* ==========================================================
+>> LANDING PAGE
+========================================================== */
+.landing-page{
+	position: relative;
+	.container-wrapper{
+		width: 100%;
+		max-width: 600px;
+		text-align: center;
+		@include absolute-centered;
+		h1{
+			font-size: 0;
+			background: url(../img/logo/logo-white.svg) no-repeat center center;
+			@include responsive-ratio(850,160);
+		}
+		.social{
+			margin-top: $spacing-base;
+			ul{
+				li{
+					display: inline-block;
+					font-size: round(($font-size-base*1.5));
+					a{
+						.zmdi-hc-inverse{
+							color: $color-body;
+						}
+						&:hover{
+							color: rgba(#fff, 0.5);
+						}
+					}
+				}
+			}
+		}
+	}
+}

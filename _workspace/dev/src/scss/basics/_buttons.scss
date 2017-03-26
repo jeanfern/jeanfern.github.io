@@ -1,0 +1,23 @@
+// _buttons.scss
+/* ==========================================================
+>> BUTTONS
+========================================================== */
+.btn{
+	@include font($font-base,$font-size-base,false,$font-base-weight,1.5,false,uppercase);
+	display: inline-block;
+	vertical-align: middle;
+	padding: $spacing-base*0.35 $spacing-base*1.8;
+	border: 1px solid;
+	text-align: center;
+	@include anim(350ms, ease-in-out);
+	&.btn-primary{
+		color: #fff;
+		border-color: $color-base;
+		background: $color-base;
+		&:hover{
+			color: #fff;
+			border-color: $color-base;
+			background: lighten($color-base, 10%);
+		}
+	}
+}

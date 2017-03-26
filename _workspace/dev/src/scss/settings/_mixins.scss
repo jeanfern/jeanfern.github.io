@@ -1,0 +1,255 @@
+// _mixins.scss
+/* Mixins included */
+// HELPER MIXINS
+
+// Property calculator
+@mixin calc($property, $expression){ 
+	#{$property}: -webkit-calc(#{$expression}); 
+	#{$property}: -moz-calc(#{$expression}); 
+	#{$property}: -ms-calc(#{$expression}); 
+	#{$property}: -o-calc(#{$expression}); 
+	#{$property}: calc(#{$expression}); 
+}
+
+// Pseudoclasses starter mixin
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+// Responsive ratio calculator
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+    $padding: unquote( ( $y / $x ) * 100 + '%' );
+    @if $pseudo {
+        &:before {
+            @include pseudo($pos: relative);
+            width: 100%;
+            padding-top: $padding;
+        }
+    } @else {
+        padding-top: $padding;
+    }
+}
+
+// Media queries
+@mixin media($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+// Z Index calculator
+@function z($name) {
+    @if index($z-indexes, $name) {
+        @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+    } @else {
+        @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+        @return null;
+    }
+}
+// ==========================================================
+//>> ANIMATIONS MIXINS
+// ==========================================================
+// Basic animation mixin
+@mixin anim($speed, $ease){
+	-webkit-transition: $speed $ease;
+	-moz-transition:  $speed $ease;
+	-o-transition: $speed $ease;
+	-ms-transition: $speed $ease;
+	transition: $speed $ease;
+}
+
+// Full animation mixin
+@mixin anim-full($translateX, $translateY, $translateZ, $rotate, $opacity){
+	opacity: $opacity;
+	-webkit-transform: rotate($rotate) translateX($translateX) translateY($translateY) translateZ($translateZ);
+	-ms-transform: rotate($rotate) translateX($translateX) translateY($translateY) translateZ($translateZ);
+	transform: rotate($rotate) translateX($translateX) translateY($translateY) translateZ($translateZ);
+}
+// ==========================================================
+//>> POSITION MIXINS
+// ==========================================================
+// Translate position
+@mixin translate($translateX, $translateY){
+	-webkit-transform: translate($translateX, $translateY);
+	-moz-transform: translate($translateX, $translateY);
+	-ms-transform: translate($translateX, $translateY);
+	-o-transform: translate($translateX, $translateY);
+	transform: translate($translateX, $translateY);	
+}
+
+// Center elements absolutely
+@mixin absolute-centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+}
+
+// Quickly margin mixin
+@mixin margin-auto{
+	margin: {
+		left: auto;
+		right: auto;
+	}
+}
+// ==========================================================
+//>> STYLES MIXINS
+// ==========================================================
+// Box shadow mixin
+@mixin box-shadow($horizontal,$vertical,$blur,$spread,$color){
+	-webkit-box-shadow: $horizontal $vertical $blur $spread $color;
+	box-shadow: $horizontal $vertical $blur $spread $color;
+}
+
+// Border radius mixin
+@mixin border-radius($radius){
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+	background-clip: padding-box;
+}
+
+// Background cover mixin
+@mixin background-cover($positionX: center, $positionY: center){
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: $positionX $positionY;
+}
+
+// Blur mixin
+@mixin blur($blur){
+    -webkit-filter: blur($blur);
+    -moz-filter: blur($blur);
+    -o-filter: blur($blur);
+    -ms-filter: blur($blur);
+    filter: blur($blur);
+}
+// ==========================================================
+//>> TEXT MIXINS
+// ==========================================================
+// Font settings mixin
+@mixin font($family: false, $size: false, $color: false, $weight: false,  $line-height: false, $letter-spacing: false, $text-transform: false) {
+    @if $family { font-family: $family; }
+    @if $size { font-size: $size; }
+    @if $color { color: $color; }
+    @if $weight { font-weight: $weight; }
+    @if $line-height { line-height: $line-height; }
+    @if $letter-spacing { letter-spacing: $letter-spacing; }
+    @if $text-transform { text-transform: $text-transform; }
+}
+
+// Single line truncate 
+@mixin truncate($width) {
+    max-width: $width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// Multiline truncate
+@mixin multiline-truncate($font-size, $line-height,$lines-to-show){
+	display: block;
+	display: -webkit-box;
+	height: $font-size*$line-height*$lines-to-show;
+	font-size: $font-size;
+	line-height: $line-height;
+	-webkit-line-clamp: $lines-to-show;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+// Placeholder starter mixin
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+// =========================================================
+//>> GRADIENTS MIXINS
+// ==========================================================
+// Full gradient mixin
+@mixin gradient($gradient-type, $color-start, $opacity-start, $color-end, $opacity-end){
+	@if $gradient-type == vertical{
+       background: -moz-linear-gradient(top, rgba($color-start,$opacity-start) 0%, rgba($color-end,$opacity-end) 100%);
+	   background: -webkit-linear-gradient(top, rgba($color-start,$opacity-start) 0%,rgba($color-end,$opacity-end) 100%);
+	   background: linear-gradient(to bottom, rgba($color-start,$opacity-start) 0%,rgba($color-end,$opacity-end) 100%);
+	   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color-start}', endColorstr='#{$color-end}',GradientType=0 );
+    }
+    @if $gradient-type == horizontal{
+       background: -moz-linear-gradient(left, rgba($color-start,$opacity-start) 0%, rgba($color-end,$opacity-end) 100%);
+       background: -webkit-linear-gradient(left, rgba($color-start,$opacity-start) 0%,rgba($color-end,$opacity-end) 100%);
+       background: linear-gradient(to right, rgba($color-start,$opacity-start) 0%,rgba($color-end,$opacity-end) 100%);
+       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color-start}', endColorstr='#{$color-end}',GradientType=1 );
+    }
+    @if $gradient-type == diagonaltobottom{
+       background: -moz-linear-gradient(-45deg, rgba($color-start,$opacity-start) 0%, rgba($color-end,$opacity-end) 100%);
+       background: -webkit-linear-gradient(-45deg, rgba($color-start,$opacity-start) 0%,rgba($color-end,$opacity-end) 100%);
+       background: linear-gradient(135deg, rgba($color-start,$opacity-start) 0%,rgba($color-end,$opacity-end) 100%);
+       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color-start}', endColorstr='#{$color-end}',GradientType=1 );
+    }
+    @if $gradient-type == diagonaltotop{
+       background: -moz-linear-gradient(45deg, rgba($color-start,$opacity-start) 0%, rgba($color-end,$opacity-end) 100%);
+       background: -webkit-linear-gradient(45deg, rgba($color-start,$opacity-start) 0%,rgba($color-end,$opacity-end) 100%);
+       background: linear-gradient(45deg, rgba($color-start,$opacity-start) 0%,rgba($color-end,$opacity-end) 100%);
+       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color-start}', endColorstr='#{$color-end}',GradientType=1 );
+    }
+    @if $gradient-type == radial{
+       background: -moz-linear-gradient(center, ellipse cover, rgba($color-start,$opacity-start) 0%, rgba($color-end,$opacity-end) 100%);
+       background: -webkit-linear-gradient(center, ellipse cover, rgba($color-start,$opacity-start) 0%,rgba($color-end,$opacity-end) 100%);
+       background: linear-gradient(ellipse at center, rgba($color-start,$opacity-start) 0%,rgba($color-end,$opacity-end) 100%);
+       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color-start}', endColorstr='#{$color-end}',GradientType=1 );
+    }
+}
+// ==========================================================
+//>> MISC
+// ==========================================================
+// Hardware acceleration mixin
+@mixin hardware($backface: true, $perspective: 1000) {
+    @if $backface {
+        backface-visibility: hidden;
+    }
+    perspective: $perspective;
+}
+
+// Triangle generator
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+    @include pseudo($pos: $position);
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: 0 - round( $size / 2.5 );
+    } @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round( $size / 2.5 );
+    } @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+    } @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
+}

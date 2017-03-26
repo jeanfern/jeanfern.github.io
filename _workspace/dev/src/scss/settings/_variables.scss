@@ -1,0 +1,75 @@
+// _variables.scss
+/* Variables included */
+// ==========================================================
+// COLOR SCHEME
+// ==========================================================
+$color-base:				#fff;
+$color-alt:					#fff;
+$color-alt2:	 		 	#fff;
+$color-alt3:				#fff;
+
+$color-light:				#fff;
+$color-shadow:             	#000;
+
+$color-body:				#000;
+$color-body-alt:			ligthen($color-body, 10%);
+
+$text-color:				#fff;
+$title-color:               #fff;
+$link-color:				$color-base;
+$link-hover-color:			lighten($link-color, 10%);
+// ==========================================================
+// FONT FAMILY
+// ==========================================================
+$font-base:					'Work Sans', sans-serif;
+$font-base-weight:			300;
+
+$font-alt:					'Bitter', serif;
+$font-alt-weight:			400;
+
+$font-alt2:					'Inconsolata', monospace;
+$font-alt2-weight:			400;
+
+$font-title:				$font-base;
+$font-title-weight:			$font-base-weight;
+// ==========================================================
+// FONT SIZE
+// ==========================================================
+$font-size-base:          	14px;
+
+$font-size-large:         	round(($font-size-base * 1.25));
+$font-size-small:         	round(($font-size-base * 0.75));
+
+$font-size-h1:            	round(($font-size-base * 2.75));
+$font-size-h2:            	round(($font-size-base * 2.50));
+$font-size-h3:            	round(($font-size-base * 2.25));
+$font-size-h4:            	round(($font-size-base * 2.00));
+$font-size-h5:            	round(($font-size-base * 1.75));
+$font-size-h6:            	round(($font-size-base * 1.50));
+// ==========================================================
+// SPACEMENT
+// ==========================================================
+$spacing-base:				20px;
+// ==========================================================
+// BREAKPOINTS
+// ==========================================================
+$breakpoints: (
+    "phone":        		400px,
+    "phone-wide":   		480px,
+    "phablet":      		560px,
+    "tablet-small": 		640px,
+    "tablet":       		768px,
+    "tablet-wide":  		1024px,
+    "desktop":      		1248px,
+    "desktop-wide": 		1440px
+);
+// ==========================================================
+// Z-INDEXES
+// ==========================================================
+$z-indexes: (
+    "outdated-browser",
+    "overlay",
+    "site-header",
+    "page-wrapper",
+    "site-footer"
+);
