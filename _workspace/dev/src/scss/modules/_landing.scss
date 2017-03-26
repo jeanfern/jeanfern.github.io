@@ -27,6 +27,8 @@
 						}
 						&:after{
 							@include pseudo(inline-block,absolute, attr(alt));
+							left: 50%;
+							bottom: -$spacing-base*2;
 							@include translate(-50%,0);
 							@include font(false, $font-size-base, #fff, 500, false, false, uppercase);
 							@include anim(350ms, ease-in-out);						

@@ -6321,6 +6321,8 @@ small {
             content: attr(alt);
             display: inline-block;
             position: absolute;
+            left: 50%;
+            bottom: -40px;
             -webkit-transform: translate(-50%, 0);
             -moz-transform: translate(-50%, 0);
             -ms-transform: translate(-50%, 0);
