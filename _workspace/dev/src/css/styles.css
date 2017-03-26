@@ -6271,6 +6271,16 @@ small {
       border-color: #fff;
       background: white; }
 
+body {
+  opacity: 0;
+  -webkit-transition: 350ms ease-in-out;
+  -moz-transition: 350ms ease-in-out;
+  -o-transition: 350ms ease-in-out;
+  -ms-transition: 350ms ease-in-out;
+  transition: 350ms ease-in-out; }
+  body.loaded {
+    opacity: 1; }
+
 /* ==========================================================
 >> SPACEMENTS
 ========================================================== */

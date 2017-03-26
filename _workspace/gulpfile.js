@@ -80,7 +80,7 @@ gulp.task('clean:img-samples', function() {
     .pipe(clean());
 });
 
-//Insn't working properly yet
+//It isn't working properly yet
 gulp.task('unused:css', function () {
 return gulp.src('dist/src/css/*.css')
     .pipe(uncss({
