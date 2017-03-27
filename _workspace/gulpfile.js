@@ -17,43 +17,33 @@ var gulp = require('gulp')
    ,browserSync = require('browser-sync').create();
 
 gulp.task('default', function(event) {
-	sequence('includes','sass','browsersync', event)
+	sequence(['includes','sass'],'browsersync', event)
 });
 
 gulp.task('build', function(event) {
-	sequence('includes', 'sass', 'clean:dist', 'minify:jscss','minify:html','minify:img','clean:img-samples', event);
+	sequence(['includes', 'sass', 'clean:dist'], 'minify:jscss',['minify:html','minify:img'],'clean:img-samples', event);
 });
 
 gulp.task('browsersync', function() {
-    browserSync.init({
-        server: {
-            baseDir: 'dev'
-        }
-    });
-
-    gulp.watch('dev/pages/*.html', ['includes']);
-    gulp.watch('dev/src/scss/**/*.scss', ['sass']);
-    gulp.watch('dev/modules/*.html', ['includes']);
+  browserSync.init({
+    server: {
+      baseDir: 'dev'
+    }
+  });
+  gulp.watch('dev/pages/*.html', ['includes']);
+  gulp.watch('dev/src/scss/**/*.scss', ['sass']);
+  gulp.watch('dev/modules/*.html', ['includes']);
  	gulp.watch('dev/src/js/**/*.js').on('change', function(event) {
-	    console.log("Linting " + event.path);
-	    gulp.src(event.path)
-	    .pipe(jshint())
-	    .pipe(jshint.reporter(jshintStylish));
-	});
-  
-	gulp.watch('dev/*.html').on('change', browserSync.reload);
+    console.log("Linting " + event.path);
+    gulp.src(event.path)
+      .pipe(jshint())
+      .pipe(jshint.reporter(jshintStylish));
+	});  
+  gulp.watch('dev/*.html').on('change', browserSync.reload);
   gulp.watch('dev/src/css/*.css').on('change', browserSync.reload);
   gulp.watch('dev/src/js/*.js').on('change', browserSync.reload); 
   gulp.watch('dev/src/img/*').on('change', browserSync.reload);
   gulp.watch('dev/src/font/*').on('change', browserSync.reload); 
-});
-
-gulp.task('sass', function () {
- 	return gulp.src('dev/src/scss/**/*.scss')
-	.pipe(sourcemaps.init())
-	.pipe(sass().on('error', sass.logError))
-	.pipe(sourcemaps.write('maps'))
-	.pipe(gulp.dest('dev/src/css'));
 });
 
 gulp.task('includes', ['clean:html'], function() {
@@ -63,6 +53,14 @@ gulp.task('includes', ['clean:html'], function() {
       basepath: 'dev/modules'
     }))
     .pipe(gulp.dest('dev'))
+});
+
+gulp.task('sass', function () {
+  return gulp.src('dev/src/scss/**/*.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.write('maps'))
+    .pipe(gulp.dest('dev/src/css'));
 });
 
 gulp.task('clean:html', function() {
@@ -78,15 +76,6 @@ gulp.task('clean:dist', function() {
 gulp.task('clean:img-samples', function() {
   return gulp.src('dist/src/img/samples')
     .pipe(clean());
-});
-
-//It isn't working properly yet
-gulp.task('unused:css', function () {
-return gulp.src('dist/src/css/*.css')
-    .pipe(uncss({
-      html: ['dist/*.html']
-    }))
-    .pipe(gulp.dest('dist/src/css'));
 });
 
 gulp.task('minify:jscss', function() {
@@ -109,3 +98,20 @@ gulp.task('minify:html', function() {
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('dist'));
 });
+
+//Uncss isn't working properly yet
+//gulp.task('unused:css', function () {
+//return gulp.src('dist/src/css/*.css')
+//    .pipe(uncss({
+//      html: ['dist/*.html']
+//    }))
+//    .pipe(gulp.dest('dist/src/css'));
+//});
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// >> To Do - Improments
+// >>>> Build Process
+// >>>>>> Find a unused css checker to html and js files as well.
+// >>>>>> Find a unused js checker
+// >>>>>> Find a unused  image checker
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
