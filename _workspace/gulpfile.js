@@ -16,12 +16,12 @@ var gulp = require('gulp')
    ,uncss = require('gulp-uncss')
    ,browserSync = require('browser-sync').create();
 
-gulp.task('default', function(event) {
-	sequence(['includes','sass'],'browsersync', event)
+gulp.task('default', function(callback) {
+  sequence(['includes','sass'],'browsersync', callback)
 });
 
-gulp.task('build', function(event) {
-	sequence(['includes', 'sass', 'clean:dist'], 'minify:jscss',['minify:html','minify:img'],'clean:img-samples', event);
+gulp.task('build', function(callback) {
+  sequence(['includes', 'sass', 'clean:dist'], ['minify:jscss','minify:img'],['minify:html','clean:img-samples'], callback);
 });
 
 gulp.task('browsersync', function() {
@@ -33,12 +33,12 @@ gulp.task('browsersync', function() {
   gulp.watch('dev/pages/*.html', ['includes']);
   gulp.watch('dev/src/scss/**/*.scss', ['sass']);
   gulp.watch('dev/modules/*.html', ['includes']);
- 	gulp.watch('dev/src/js/**/*.js').on('change', function(event) {
+  gulp.watch('dev/src/js/**/*.js').on('change', function(event) {
     console.log("Linting " + event.path);
     gulp.src(event.path)
       .pipe(jshint())
       .pipe(jshint.reporter(jshintStylish));
-	});  
+  }; ) 
   gulp.watch('dev/*.html').on('change', browserSync.reload);
   gulp.watch('dev/src/css/*.css').on('change', browserSync.reload);
   gulp.watch('dev/src/js/*.js').on('change', browserSync.reload); 
@@ -47,7 +47,7 @@ gulp.task('browsersync', function() {
 });
 
 gulp.task('includes', ['clean:html'], function() {
-	return gulp.src('dev/pages/*.html')
+  return gulp.src('dev/pages/*.html')
     .pipe(fileinclude({
       prefix: '@@',
       basepath: 'dev/modules'
@@ -64,13 +64,13 @@ gulp.task('sass', function () {
 });
 
 gulp.task('clean:html', function() {
-	return gulp.src('dev/*.html')
-		.pipe(clean());
+  return gulp.src('dev/*.html')
+    .pipe(clean());
 });
 
 gulp.task('clean:dist', function() {
-	return gulp.src('dist')
-		.pipe(clean());
+  return gulp.src('dist')
+    .pipe(clean());
 });
 
 gulp.task('clean:img-samples', function() {
