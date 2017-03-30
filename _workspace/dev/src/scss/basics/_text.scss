@@ -6,7 +6,7 @@
 	outline:none;
 }
 body, html{
-	@include font($font-base,$font-size-base,$text-color,$font-base-weight,1.5,false,false);
+	@include font($font-base,$font-size-base,$text-color,$font-base-weight,1.5,0.25rem,false);
 	background: $color-body;
 }
 a, a:hover, a:focus, a:active, a:visited{
@@ -20,7 +20,7 @@ a:active{
 	color:$link-hover-color;
 }	
 h1, h2, h3, h4, h5, h6{
-	@include font($font-title,false,$title-color,$font-title-weight,1.5,false,false);
+	@include font($font-title,false,$title-color,$font-title-weight,1.15,false,false);
 }
 h1{font-size:$font-size-h1;}
 h2{font-size:$font-size-h2;}

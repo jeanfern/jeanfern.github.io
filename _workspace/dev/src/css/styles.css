@@ -42,6 +42,7 @@
 6. MODULES
 	- Landing Page
 	- Header
+	- Timeline
 	- Footer
 =============================================================
 
@@ -6168,10 +6169,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 
 body, html {
   font-family: "Work Sans", sans-serif;
-  font-size: 14px;
+  font-size: 100%;
   color: #fff;
   font-weight: 300;
   line-height: 1.5;
+  letter-spacing: 0.25rem;
   background: #000; }
 
 a, a:hover, a:focus, a:active, a:visited {
@@ -6192,25 +6194,25 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Work Sans", sans-serif;
   color: #fff;
   font-weight: 300;
-  line-height: 1.5; }
+  line-height: 1.15; }
 
 h1 {
-  font-size: 39px; }
+  font-size: 275%; }
 
 h2 {
-  font-size: 35px; }
+  font-size: 250%; }
 
 h3 {
-  font-size: 32px; }
+  font-size: 225%; }
 
 h4 {
-  font-size: 28px; }
+  font-size: 200%; }
 
 h5 {
-  font-size: 25px; }
+  font-size: 175%; }
 
 h6 {
-  font-size: 21px; }
+  font-size: 150%; }
 
 p {
   padding: 0;
@@ -6226,35 +6228,35 @@ small {
   font-size: 50%; }
 
 .text-area h1, .text-area h2, .text-area h3, .text-area h4, .text-area h5, .text-area h6 {
-  padding-top: 10px;
-  padding-bottom: 10px; }
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem; }
 
 .text-area p {
-  padding-top: 5px;
-  padding-bottom: 5px; }
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem; }
 
 .text-area ul li {
   list-style: inside disc;
-  padding-top: 5px;
-  padding-bottom: 5px; }
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem; }
 
 .text-area ol li {
   list-style: inside decimal;
-  padding-top: 5px;
-  padding-bottom: 5px; }
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem; }
 
 /* ==========================================================
 >> BUTTONS
 ========================================================== */
 .btn {
   font-family: "Work Sans", sans-serif;
-  font-size: 14px;
+  font-size: 100%;
   font-weight: 300;
   line-height: 1.5;
   text-transform: uppercase;
   display: inline-block;
   vertical-align: middle;
-  padding: 7px 36px;
+  padding: 0.35rem 1.8rem;
   border: 1px solid;
   text-align: center;
   -webkit-transition: 350ms ease-in-out;
@@ -6319,10 +6321,10 @@ body {
       background: url(../img/logo/logo-white.svg) no-repeat center center;
       padding-top: 18.82353%; }
     .landing-page .container-wrapper .social {
-      margin-top: 20px; }
+      margin-top: 1rem; }
       .landing-page .container-wrapper .social ul li {
         display: inline-block;
-        font-size: 21px; }
+        font-size: 150%; }
         .landing-page .container-wrapper .social ul li a {
           position: relative; }
           .landing-page .container-wrapper .social ul li a .zmdi-hc-inverse {
@@ -6332,13 +6334,13 @@ body {
             display: inline-block;
             position: absolute;
             left: 50%;
-            bottom: -40px;
+            bottom: -2.75rem;
             -webkit-transform: translate(-50%, 0);
             -moz-transform: translate(-50%, 0);
             -ms-transform: translate(-50%, 0);
             -o-transform: translate(-50%, 0);
             transform: translate(-50%, 0);
-            font-size: 14px;
+            font-size: 70%;
             color: #fff;
             font-weight: 500;
             text-transform: uppercase;
@@ -6352,5 +6354,68 @@ body {
             color: rgba(255, 255, 255, 0.5); }
             .landing-page .container-wrapper .social ul li a:hover:after {
               opacity: 1; }
+
+.timeline {
+  overflow: hidden; }
+  .timeline .container-wrapper {
+    position: relative;
+    max-width: 1170px;
+    width: 90%;
+    margin: auto; }
+    .timeline .container-wrapper:before {
+      content: '';
+      position: absolute;
+      width: 0.25rem;
+      height: 100%;
+      background: #fff;
+      left: 2.75rem; }
+      @media only screen and (min-width: 1248px) {
+        .timeline .container-wrapper:before {
+          left: 50%;
+          margin-left: -0.125rem; } }
+    .timeline .container-wrapper .item {
+      position: relative;
+      display: block; }
+      .timeline .container-wrapper .item .image-wrapper {
+        position: absolute;
+        width: 6rem;
+        height: 6rem;
+        overflow: hidden;
+        -webkit-border-radius: 100%;
+        border-radius: 100%;
+        background-clip: padding-box;
+        top: 2rem; }
+        @media only screen and (min-width: 1248px) {
+          .timeline .container-wrapper .item .image-wrapper {
+            left: 50%;
+            margin-left: -3rem; } }
+        .timeline .container-wrapper .item .image-wrapper img {
+          width: 100%; }
+      .timeline .container-wrapper .item .content-wrapper {
+        padding: 2rem;
+        padding-left: 7rem; }
+        @media only screen and (min-width: 1248px) {
+          .timeline .container-wrapper .item .content-wrapper {
+            padding: 2rem;
+            width: 45%; } }
+        .timeline .container-wrapper .item .content-wrapper .btn {
+          margin-top: 2rem; }
+        .timeline .container-wrapper .item .content-wrapper .company {
+          font-weight: 600; }
+          .timeline .container-wrapper .item .content-wrapper .company:after {
+            content: '-';
+            margin-left: 0.4rem; }
+        .timeline .container-wrapper .item .content-wrapper .date {
+          font-style: italic; }
+        .timeline .container-wrapper .item .content-wrapper .place {
+          display: block;
+          font-style: italic; }
+      @media only screen and (min-width: 1248px) {
+        .timeline .container-wrapper .item:nth-child(even) .content-wrapper {
+          float: right; }
+        .timeline .container-wrapper .item:nth-child(even):after {
+          content: '';
+          display: block;
+          clear: both; } }
 
 /*# sourceMappingURL=maps/styles.css.map */

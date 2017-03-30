@@ -38,7 +38,7 @@ gulp.task('browsersync', function() {
     gulp.src(event.path)
       .pipe(jshint())
       .pipe(jshint.reporter(jshintStylish));
-  }; ) 
+  }); 
   gulp.watch('dev/*.html').on('change', browserSync.reload);
   gulp.watch('dev/src/css/*.css').on('change', browserSync.reload);
   gulp.watch('dev/src/js/*.js').on('change', browserSync.reload); 
