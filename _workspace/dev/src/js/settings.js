@@ -125,16 +125,16 @@ $(document).ready(function(){
   // =========================== */
   // Malihu Scroll Bar Start
   // =========================== */
-  $(".add-scrollbar").mCustomScrollbar({
-    theme:"light"
-  });
+  //$(".add-scrollbar").mCustomScrollbar({
+  //  theme:"light"
+  //});
   // =========================== */
   // Light Gallery Start
   // =========================== */
-  $(".add-lightgallery").lightGallery({
-      thumbnail:true,
-      fullScreen:true
-  });
+  //$(".add-lightgallery").lightGallery({
+  //    thumbnail:true,
+  //    fullScreen:true
+  //});
 }); // DOCUMENT READY end
 /* ==========================================================
 >> WINDOW LOAD
