@@ -31,7 +31,7 @@
 
 </head>
 <body>
-	<div class="body-wrapper fullHeight add-scrollbar">
+	<div class="body-wrapper">
 		<!-- PAGE CONTENT -->
 		<!-- ============================================================
 >> TIMELINE
@@ -42,12 +42,16 @@
 			<div class="image-wrapper wow bounceIn">
 				<img src="/src/img/samples/1x1/01.jpg" alt="">
 			</div>
-			<div class="content-wrapper wow fadeInUp">
+			<div class="content-wrapper">
 				<div class="text-area">
 					<h2>Title of section 1</h2>
-					<p><span class="company">Company</span> <span class="date">Mar 2017</span>
+					<p class="info"><span class="company">Company</span> <span class="date">Mar 2017</span>
 					<span class="place">Dublin, Ireland</span></p>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+					<div class="extra-info">
+						<h3>Beside Content</h3>
+						<p>Just testing.</p>
+					</div>
 					<a href="/" class="btn btn-more">See Projects</a>
 				</div>
 			</div>
@@ -56,11 +60,13 @@
 			<div class="image-wrapper wow bounceIn">
 				<img src="/src/img/samples/1x1/02.jpg" alt="">
 			</div>
-			<div class="content-wrapper wow fadeInUp">
+			<div class="content-wrapper">
 				<div class="text-area">
 					<h2>Title of section 1</h2>
-					<p><span class="company">Company</span> <span class="date">Mar 2017</span>
-					<span class="place">Dublin, Ireland</span></p>
+					<div class="extra-info">
+						<p class="info"><span class="company">Company</span> <span class="date">Mar 2017</span>
+						<span class="place">Dublin, Ireland</span></p>
+					</div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
 				</div>
 			</div>
@@ -69,7 +75,7 @@
 			<div class="image-wrapper wow bounceIn">
 				<img src="/src/img/samples/1x1/03.jpg" alt="">
 			</div>
-			<div class="content-wrapper wow fadeInUp">
+			<div class="content-wrapper">
 				<div class="text-area">
 					<h2>Title of section 1</h2>
 					<p><span class="company">Company</span> <span class="date">Mar 2017</span>
@@ -86,11 +92,17 @@
 		<!-- PAGE CONTENT end -->		
 	</div>
 
-	<!--build:css src/css/index.min.css -->
+	<!--build:css src/css/home.min.css -->
 	<link rel="stylesheet" href="src/css/styles.css">
+	<!-- CSS Plugins -->
+	<link rel="stylesheet" href="src/css/plugins/animate.css">
+	<link rel="stylesheet" href="src/css/plugins/lightgallery.css">
+	<link rel="stylesheet" href="src/css/plugins/mcustomscrollbar.css">
+	<link rel="stylesheet" href="src/css/plugins/owlcarousel.css">
+	<!-- CSSS Plugins end -->
 	<!-- endbuild -->
 
-	<!--build:js src/js/index.min.js -->
+	<!--build:js src/js/home.min.js -->
 	<!-- JS Library-->
 	<script src="src/js/jquery.js"></script>
 	<script src="src/js/jqueryui.js"></script>

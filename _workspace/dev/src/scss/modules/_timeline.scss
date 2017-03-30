@@ -8,13 +8,13 @@
 		&:before{
 			content: '';
 			position: absolute;
-			width: 0.25rem;
+			width: 0.1rem;
 			height: 100%;
 			background: $text-color;
-			left: 2.75rem;
+			left: 1.45rem;
 			@include media(desktop){
 				left: 50%;
-				margin-left: -0.125rem;
+				margin-left: -0.05rem;
 			}
 		}
 		.item{
@@ -22,12 +22,15 @@
 			display: block;
 			.image-wrapper{
 				position: absolute;
-				width: 6rem;
-				height: 6rem;
 				overflow: hidden;
 				@include border-radius(100%);
 				top: 2rem;
+				width: 3rem;
+				height: 3rem;
+				border: 0.2rem solid #fff;
 				@include media(desktop){
+					width: 6rem;
+					height: 6rem;
 					left: 50%;
 					margin-left: -3rem;
 				}
@@ -36,8 +39,8 @@
 				}
 			}
 			.content-wrapper{
-				padding: 2rem;
-				padding-left: 7rem;
+				padding: 2rem 1rem;
+				padding-left: 4rem;
 				@include media(desktop){
 					padding: 2rem;
 					width: 45%;
@@ -59,11 +62,29 @@
 					display: block;
 					font-style: italic;
 				}
+				.extra-info{
+					@include media(desktop){
+						position: absolute;
+						top: 0rem;
+						left: 50%;
+						padding: 2rem;
+						width: 45%;
+						left: 55%;
+
+						.info{
+							margin-top: 1rem;
+						}
+					}
+				}
 			}
 			&:nth-child(even){
 				@include media(desktop){				
 					.content-wrapper{
 						float: right;
+						.extra-info{
+							text-align: right;
+							left: 0;
+						}
 					}
 					&:after{
 						content: '';

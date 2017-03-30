@@ -31,16 +31,11 @@
 	- Google Font Inconsolata
 	- Font Awesome v.4.7.0
 	- Material Design Iconic Font v.2.2.0
-4. PLUGINS
-	- Animate CSS v.3.5.1
-	- Owl Carousel v2.2.1
-	- Malihu Custom Scrollbar v.3.1.5
-	- Light Gallery v1.3.9
-5. BASICS
+4. BASICS
 	- Text
 	- Buttons
 	- Helpers
-6. MODULES
+5. MODULES
 	- Landing Page
 	- Header
 	- Timeline
@@ -69,20 +64,13 @@
 @import "http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 @import "https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css";
 /* ==========================================================
->> 4. PLUGINS
-========================================================== */
-@import "plugins/_animate.scss";
-@import "plugins/_owlcarousel.scss";
-@import "plugins/_mcustomscrollbar.scss";
-@import "plugins/_lightgallery.scss";
-/* ==========================================================
->> 5. BASICS
+>> 4. BASICS
 ========================================================== */
 @import "basics/_text.scss";
 @import "basics/_buttons.scss";
 @import "basics/_helpers.scss";
 /* ==========================================================
->> 6. MODULES
+>> 5. MODULES
 ========================================================== */
 @import "modules/_landing.scss";
 @import "modules/_header.scss";

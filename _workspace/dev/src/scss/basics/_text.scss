@@ -8,6 +8,9 @@
 body, html{
 	@include font($font-base,$font-size-base,$text-color,$font-base-weight,1.5,0.25rem,false);
 	background: $color-body;
+	@include media(phablet, max){
+		font-size: round(($font-size-base*0.85));
+	}
 }
 a, a:hover, a:focus, a:active, a:visited{
 	color:$link-color;

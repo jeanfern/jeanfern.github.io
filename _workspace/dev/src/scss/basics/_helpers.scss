@@ -7,6 +7,38 @@ body{
 	}
 }
 /* ==========================================================
+>> SCRILL BAR
+========================================================== */ 
+::-webkit-scrollbar {
+	width: 0.3rem;
+	height: 0.3rem;
+}
+::-webkit-scrollbar-button {
+	width: 0px;
+	height: 0px;
+}
+::-webkit-scrollbar-thumb {
+	background: $color-base;
+	border: 0px none $color-base;
+	border-radius: 0px;
+	&:hover,
+	&:active {
+	  background: $color-base;
+	}
+}
+::-webkit-scrollbar-track {
+	background: $color-body;
+	border: 0px none #ffffff;
+	border-radius: 0px;
+	&:hover,
+	&:active {
+		background: $color-body;
+	}
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+/* ==========================================================
 >> SPACEMENTS
 ========================================================== */ 
 .no-padding{
