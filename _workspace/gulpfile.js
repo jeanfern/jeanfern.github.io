@@ -14,6 +14,8 @@ var gulp = require('gulp')
    ,imagemin = require('gulp-imagemin')
    ,htmlmin = require('gulp-htmlmin')
    ,uncss = require('gulp-uncss')
+   ,inline = require('gulp-inline-source')
+   ,filter = require('gulp-filter')
    ,browserSync = require('browser-sync').create();
 
 gulp.task('default', function(callback) {
@@ -21,7 +23,7 @@ gulp.task('default', function(callback) {
 });
 
 gulp.task('build', function(callback) {
-  sequence(['includes', 'sass', 'clean:dist'], ['minify:jscss','minify:img'],['minify:html','clean:img-samples'], callback);
+  sequence(['includes', 'sass', 'clean:dist'], ['minify:jscss','copy:fonts','minify:img'],'inline:sources','minify:html', callback);
 });
 
 gulp.task('browsersync', function() {
@@ -73,11 +75,6 @@ gulp.task('clean:dist', function() {
     .pipe(clean());
 });
 
-gulp.task('clean:img-samples', function() {
-  return gulp.src('dist/src/img/samples')
-    .pipe(clean());
-});
-
 gulp.task('minify:jscss', function() {
   return gulp.src('dev/*.html')
     .pipe(usemin({
@@ -89,6 +86,8 @@ gulp.task('minify:jscss', function() {
 
 gulp.task('minify:img', function() {
   return gulp.src('dev/src/img/**/*')
+    .pipe(filter(['**', '!dev/src/img/samples']))
+    .pipe(filter(['**/*', '!dev/src/img/samples/**/*']))
     .pipe(imagemin())
     .pipe(gulp.dest('dist/src/img'));
 });
@@ -97,6 +96,17 @@ gulp.task('minify:html', function() {
   return gulp.src('dist/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('dist'));
+});
+
+gulp.task('inline:sources', function () {
+    return gulp.src('dist/*.html')
+      .pipe(inline())
+      .pipe(gulp.dest('dist'));
+});
+
+gulp.task('copy:fonts', function () {
+    return gulp.src('dev/src/fonts/**/*')
+      .pipe(gulp.dest('dist/src/fonts/'));
 });
 
 //Uncss isn't working properly yet
