@@ -1,13 +1,110 @@
-// _helpers.scss
-body{
-	opacity: 0;
-	@include anim(350ms, ease-in-out);
-	&.loaded{
-		opacity: 1;
+/* ==========================================================
+>> COLORS
+========================================================== */ 
+.blue{
+	background-color: $blue;
+}
+.blue-text{
+	color: $blue;
+	h1,h2,h3,h4,h5,h6{
+		color: $blue;
 	}
 }
+.red{
+	background-color: $red;
+}
+.red-text{
+	color: $red;
+	h1,h2,h3,h4,h5,h6{
+		color: $red;
+	}
+}
+.yellow{
+	background-color: $yellow;
+}
+.yellow-text{
+	color: $yellow;
+	h1,h2,h3,h4,h5,h6{
+		color: $yellow;
+	}
+}
+.green{
+	background-color: $green;
+}
+.green-text{
+	color: $green;
+	h1,h2,h3,h4,h5,h6{
+		color: $green;
+	}
+}
+.gray{
+	background-color: $gray;
+}
+.gray-text{
+	color: $gray;
+	h1,h2,h3,h4,h5,h6{
+		color: $gray;
+	}
+}
+.black{
+	background-color: #000;
+}
+.black-text{
+	color: #000;
+	h1,h2,h3,h4,h5,h6{
+		color: #000;
+	}
+}
+.white{
+	background-color: #fff;
+}
+.white-text{
+	color: #fff;
+	h1,h2,h3,h4,h5,h6{
+		color: #fff;
+	}
+}
+.color-base{
+	background-color: $color-base;
+}
+.color-base-text{
+	color: $color-base;
+	h1,h2,h3,h4,h5,h6{
+		color: $color-base;
+	}
+}
+.color-alt{
+	background-color: $color-alt;
+}
+.color-alt-text{
+	color: $color-alt;
+	h1,h2,h3,h4,h5,h6{
+		color: $color-alt;
+	}
+}
+.color-alt2{
+	background-color: $color-alt2;
+}
+.color-alt2-text{
+	color: $color-alt2;
+	h1,h2,h3,h4,h5,h6{
+		color: $color-alt2;
+	}
+}
+.color-alt3{
+	background-color: $color-alt3;
+}
+.color-alt3-text{
+	color: $color-alt3;
+	h1,h2,h3,h4,h5,h6{
+		color: $color-alt3;
+	}
+}
+.lg-backdrop{
+	background-color:rgba(#000, 0.85);
+}
 /* ==========================================================
->> SCRILL BAR
+>> SCROLL BAR
 ========================================================== */ 
 ::-webkit-scrollbar {
 	width: 0.3rem;
@@ -41,6 +138,9 @@ body{
 /* ==========================================================
 >> SPACEMENTS
 ========================================================== */ 
+.maxwidth{
+	max-width: 100%;
+}
 .no-padding{
 	padding: 0px !important;
 }

@@ -7,78 +7,59 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="ux designer, front-end developer, ux design, front-end, web, webdesign, webdesigner, ux development, development, ux, app" />
+	<meta name="keywords" content="ux designer, front-end developer, ux design, front-end, web, webdesign, webdesigner, ux development, development, ux, app, graphic design, print, web, mobile, portfolio" />
 	<meta name="description" content="Professional resume and portfolio." />
-	<title>Jean Fernandes - UX Designer &amp; Front-End Developer</title>
+	<title>Jean Fernandes | UX Designer &amp; Front-End Developer</title>
 
 	@@include('favicons.html')
 
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:100,300,400,700,900%7CBitter:400,400i,700%7CInconsolata:400,700" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet">
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- Fonts end -->
+
+	<!--build:css src/css/index.min.css -->
+	<!-- CSS Plugins -->
+	<link rel="stylesheet" href="src/css/plugins/animate.css">
+	<link rel="stylesheet" href="src/css/plugins/lightgallery.css">
+	<link rel="stylesheet" href="src/css/plugins/mcustomscrollbar.css">
+	<link rel="stylesheet" href="src/css/plugins/slick.css">
+	<!-- CSSS Plugins end -->
+	<link rel="stylesheet" href="src/css/styles.css">
+	<!-- endbuild --> 
+
 </head>
-<body bgcolor="#000">
+<body class="home">
 	<div class="body-wrapper">
 		<!-- PAGE CONTENT -->
-		<div class="landing-page fullHeight">
-			<div class="container-wrapper">				
-				<h1 class="wow flipInX">jeanfern</h1>
-				<h2 class="wow fadeIn" data-wow-delay="1s">Coding soon...</h2>
-				<div class="social">
-					<ul>
-						<li class="wow fadeInDown" data-wow-delay="2s">
-							<a alt="Linkedin" target="_blank" href="https://www.linkedin.com/in/jeanfern/">
-								<span class="zmdi-hc-stack zmdi-hc-lg">
-								<i class="zmdi zmdi-circle zmdi-hc-stack-2x"></i>
-								<i class="zmdi zmdi-linkedin zmdi-hc-stack-1x zmdi-hc-inverse"></i>
-								</span>
-							</a>
-						</li>
-						<li class="wow fadeInDown" data-wow-delay="2.25s">
-							<a alt="Email" href="mailto:jeanfern@gmail.com">
-								<span class="zmdi-hc-stack zmdi-hc-lg">
-								<i class="zmdi zmdi-circle zmdi-hc-stack-2x"></i>
-								<i class="zmdi zmdi-email zmdi-hc-stack-1x zmdi-hc-inverse"></i>
-								</span>
-							</a>
-						</li>
-						<li class="wow fadeInDown" data-wow-delay="2.5s">
-							<a alt="Skype" href="skype:jeanfern?chat">
-								<span class="zmdi-hc-stack zmdi-hc-lg">
-								<i class="zmdi zmdi-circle zmdi-hc-stack-2x"></i>
-								<i class="zmdi zmdi-skype zmdi-hc-stack-1x zmdi-hc-inverse"></i>
-								</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		@@include('header.html')
+		@@include('banner.html')
+		@@include('aboutme.html')
+		@@include('timeline.html')
+		@@include('footer.html')
 		<!-- PAGE CONTENT end -->		
 	</div>
 
-	<!--build:css src/css/index.min.css -->
-	<link rel="stylesheet" href="src/css/styles.css">
-	<!-- CSS Plugins -->
-	<link rel="stylesheet" href="src/css/plugins/animate.css">
-	<!-- <link rel="stylesheet" href="src/css/plugins/lightgallery.css">
-	<link rel="stylesheet" href="src/css/plugins/mcustomscrollbar.css">
-	<link rel="stylesheet" href="src/css/plugins/owlcarousel.css"> -->
-	<!-- CSSS Plugins end -->
-	<!-- endbuild -->
 
 	<!-- JS Library-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script> -->
 	<!-- JS Library end -->
-	
+
+	<!-- JS CDN -->
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.lazy/1.7.4/jquery.lazy.min.js"></script>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+	<!-- JS CDN edn -->
+
 	<!--build:js src/js/index.min.js -->
 	<!-- JS Plugins -->
 	<script src="src/js/plugins/wow.js"></script>
-	<!-- <script src="src/js/plugins/mousewheel.js"></script>
+	<script src="src/js/plugins/mousewheel.js"></script>
 	<script src="src/js/plugins/lightgallery.js"></script>
 	<script src="src/js/plugins/mcustomscrollbar.js"></script>
-	<script src="src/js/plugins/owlcarousel.js"></script> -->
 	<!-- JS Plugins end -->
 	<!-- JS Settings -->
-	<script src="src/js/settings-landingpage.js"></script>
+	<script src="src/js/settings.js"></script>
 	<!-- JS Settings end -->
 	<!-- endbuild -->
 	

@@ -45,7 +45,7 @@ gulp.task('browsersync', function() {
   gulp.watch('dev/src/css/*.css').on('change', browserSync.reload);
   gulp.watch('dev/src/js/*.js').on('change', browserSync.reload); 
   gulp.watch('dev/src/img/*').on('change', browserSync.reload);
-  gulp.watch('dev/src/font/*').on('change', browserSync.reload); 
+  gulp.watch('dev/src/fonsS/*').on('change', browserSync.reload); 
 });
 
 gulp.task('includes', ['clean:html'], function() {

@@ -1,0 +1,42 @@
+// ==========================================================
+//>> HEADER
+// ==========================================================
+.about-me{
+	position: relative;
+	background: #fff;
+	border-bottom: 0.15rem solid $gray;
+	.image-wrapper{
+		position: absolute;
+		top: -100px;
+		left: 50%;
+		width: 200px;
+		margin-left: -100px;
+		display: inline-block;
+		@include border-radius(100%);
+		@include animate(1s, jello);
+		@include media(tablet-wide, max){
+			width: 150px;
+			margin-left: -75px;
+			top: -75px;
+		}
+		img{
+			max-width: 100%;
+			border: 0.5rem solid #fff;
+			@include border-radius(100%);
+			pointer-events: none;
+		}
+	}
+	.container-wrapper{
+		position: relative;
+		width: 90%;
+		max-width: 960px;
+		margin: auto;
+		padding: 8rem 0 4rem 0;
+		.text-area{
+			@include animate(1s, fadeInLeft);
+			h1{
+				text-align: center;
+			}
+		}
+	}
+}

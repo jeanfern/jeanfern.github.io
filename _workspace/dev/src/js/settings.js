@@ -38,18 +38,17 @@
   // SMOOTH SCROLL
   // =========================== */
   $(function() {
-    $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        var header = $('header').outerHeight();
-        $('html,body').animate({
-          scrollTop: target.offset().top - header
-        }, 1000, 'easeInOutCubic');
-        return false;
+    $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
       }
-    }
     });
   });
   // =========================== */
@@ -57,7 +56,10 @@
   // =========================== */
   function ScrollWatcher(){
     var scroll = $(window).scrollTop();
-    if(scroll > 1){
+    var header = $('header .container-wrapper').outerHeight();
+    var banner = $('.banner').outerHeight() - header;
+
+    if(scroll > banner){
       $('body').addClass('scrolled');
     } else {
       $('body').removeClass('scrolled');
@@ -101,6 +103,28 @@
     var wh = $(window).height();
     $('.fullHeight').css('height', wh);
   }
+  function menuHeight(){
+    var wh = $(window).height();
+    var hc = $('header .container-wrapper').outerHeight();
+
+    if(wh < 460){
+      $('header .menu-wrapper').mCustomScrollbar({
+        theme:"light"
+      });     
+    } else {
+      $('header .menu-wrapper').mCustomScrollbar("destroy");
+    }
+
+    if($('body').hasClass('opened-menu')){
+      $('header').animate({height: wh}).promise().done(function () {
+        $('header .menu-wrapper').css({height: wh - hc});   
+      });  
+    } else {
+      $('header').animate({height: '5rem'}).promise().done(function () {
+        $('header .menu-wrapper').css({height: 0});   
+      });
+    }
+  }
 // FUNCTIONS end
 /* ==========================================================
 >> DOCUMENT READY
@@ -125,16 +149,39 @@ $(document).ready(function(){
   // =========================== */
   // Malihu Scroll Bar Start
   // =========================== */
-  //$(".add-scrollbar").mCustomScrollbar({
-  //  theme:"light"
-  //});
+  $(".add-scrollbar").mCustomScrollbar({
+    theme:"light"
+  });
   // =========================== */
   // Light Gallery Start
   // =========================== */
-  //$(".add-lightgallery").lightGallery({
-  //    thumbnail:true,
-  //    fullScreen:true
-  //});
+  $(".add-lightgallery").lightGallery({
+      thumbnail:false,
+      fullScreen:true,
+      selector: '.carousel-item a'
+  });
+  // =========================== */
+  // Lazy Load Start
+  // =========================== */
+  $('.lazy').Lazy();
+  $('.add-carousel').slick({
+    lazyLoad: 'progressive',
+    adaptiveHeight: true,
+  });
+  // =========================== */
+  // Menu
+  // =========================== */
+  $('.open-menu').on('click',function(e){
+    e.preventDefault();
+    $('body').toggleClass('opened-menu');
+    $('.menu').slideToggle();
+    menuHeight();
+    if($('body').hasClass('opened-menu')){
+      disableScroll();
+    } else {
+      enableScroll();
+    }
+  });
 }); // DOCUMENT READY end
 /* ==========================================================
 >> WINDOW LOAD
@@ -155,4 +202,5 @@ $(window).scroll(function(){
 ========================================================== */
 $(window).resize(function(){
   fullHeight();
+  menuHeight();
 }); // WINDOW RESIZE end

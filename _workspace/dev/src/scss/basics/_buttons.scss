@@ -10,14 +10,81 @@
 	border: 1px solid;
 	text-align: center;
 	@include anim(350ms, ease-in-out);
-	&.btn-primary{
+	&.btn-yellow{
 		color: #fff;
-		border-color: $color-base;
-		background: $color-base;
-		&:hover{
+		border-color: $yellow;
+		background: $yellow;
+		&:hover,
+		&:focus{
 			color: #fff;
-			border-color: $color-base;
-			background: lighten($color-base, 10%);
+			border-color: $yellow;
+			background: lighten($yellow, 10%);
+		}
+	}
+	&.btn-blue{
+		color: #fff;
+		border-color: $blue;
+		background: $blue;
+		&:hover,
+		&:focus{
+			color: #fff;
+			border-color: $blue;
+			background: lighten($blue, 10%);
+		}
+	}
+	&.btn-green{
+		color: #fff;
+		border-color: $green;
+		background: $green;
+		&:hover,
+		&:focus{
+			color: #fff;
+			border-color: $green;
+			background: lighten($green, 10%);
+		}
+	}
+	&.btn-red{
+		color: #fff;
+		border-color: $red;
+		background: $red;
+		&:hover,
+		&:focus{
+			color: #fff;
+			border-color: $red;
+			background: lighten($red, 10%);
+		}
+	}
+	&.btn-black{
+		color:#fff;
+		border-color: #000;
+		background: #000;
+		&:hover,
+		&:focus{
+			color: #fff;
+			border-color: #000;
+			background: lighten(#000, 10%);
+		}
+	}
+	&.btn-white{
+		color:#000;
+		border-color: #000;
+		background: #fff;
+		&:hover,
+		&:focus{
+			color: #000;
+			border-color: #000;
+			background: lighten(#fff, 10%);
+		}
+	}
+	&.btn-transparent-white{
+		color:#fff;
+		border-color: #fff;
+		background: transparent;
+		&:hover,
+		&:focus{
+			color: #fff;
+			border-color: #fff;
+			background: lighten(transparent, 10%);
 		}
 	}
 }

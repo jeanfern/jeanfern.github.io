@@ -3,26 +3,33 @@
 // ==========================================================
 // COLOR SCHEME
 // ==========================================================
-$color-base:				#fff;
-$color-alt:					#fff;
-$color-alt2:	 		 	#fff;
-$color-alt3:				#fff;
+
+$blue:                      #4688F1;
+$red:                       #E9453C;
+$yellow:                    #FABC2D;
+$green:                     #3BA757;
+$gray:                      #F2F0EB;
+
+$color-base:				$yellow;
+$color-alt:					$blue;
+$color-alt2:	 		 	$green;
+$color-alt3:				$red;
 
 $color-light:				#fff;
 $color-shadow:             	#000;
 
-$color-body:				#000;
+$color-body:				#fff;
 $color-body-alt:			ligthen($color-body, 10%);
 
-$text-color:				#fff;
-$title-color:               #fff;
+$text-color:				#000;
+$title-color:               #000;
 $link-color:				$color-base;
 $link-hover-color:			lighten($link-color, 10%);
 // ==========================================================
 // FONT FAMILY
 // ==========================================================
 $font-base:					'Work Sans', sans-serif;
-$font-base-weight:			300;
+$font-base-weight:			400;
 
 $font-alt:					'Bitter', serif;
 $font-alt-weight:			400;
@@ -30,8 +37,11 @@ $font-alt-weight:			400;
 $font-alt2:					'Inconsolata', monospace;
 $font-alt2-weight:			400;
 
-$font-title:				$font-base;
-$font-title-weight:			$font-base-weight;
+$zmdi:                      'Material-Design-Iconic-Font';
+$fa:                        'FontAwesome';
+
+$font-title:				$font-alt;
+$font-title-weight:			400;
 // ==========================================================
 // FONT SIZE
 // ==========================================================
@@ -69,7 +79,7 @@ $breakpoints: (
 $z-indexes: (
     "outdated-browser",
     "overlay",
-    "site-header",
-    "page-wrapper",
-    "site-footer"
+    "header",
+    "content",
+    "footer"
 );

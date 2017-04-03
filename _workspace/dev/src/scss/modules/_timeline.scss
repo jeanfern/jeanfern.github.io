@@ -1,20 +1,80 @@
+// ==========================================================
+//>> TIMELINE
+// ==========================================================
 .timeline{
 	overflow: hidden;
+	z-index: z('content');
 	.container-wrapper{
 		position: relative;
-		max-width: 1170px;
+		max-width: 1600px;
 		width: 90%;
+		padding: 4rem 0;
 		margin: auto;
 		&:before{
 			content: '';
 			position: absolute;
 			width: 0.1rem;
 			height: 100%;
-			background: $text-color;
+			background: $gray;
+			top: 0;
 			left: 1.45rem;
 			@include media(desktop){
 				left: 50%;
 				margin-left: -0.05rem;
+			}
+		}
+		.event{
+			position: relative;
+			display: block;
+			margin: 2rem 0;
+			text-align: left;
+			@include media(desktop){
+				text-align: center;				
+			}
+			.image-wrapper{
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				overflow: hidden;
+				@include border-radius(100%);
+				pointer-events: none;
+				text-align: center;
+				width: 4rem;
+				height: 4rem;
+				margin-left: -0.5rem;
+				@include media(desktop){
+					width: 8rem;
+					height: 8rem;			
+				}
+				i{
+					font-size: 3rem;
+					@include absolute-centered;
+					@include media(desktop){
+						font-size: 6rem;
+					}
+				}
+			}
+			.content-wrapper{
+				display: block;
+				vertical-align: middle;
+				margin-top: 0.5rem;
+				@include media(desktop){
+					margin-top: 1rem;
+					display: block;
+				}
+				.text-area{
+					display: inline-block;
+					padding: 1rem 1rem 1rem 4rem;
+					@include border-radius(2rem);
+					margin-left: -4rem;
+					background: $color-body;
+					border: 1px solid $gray;
+					@include media(desktop){
+						margin-left: 0;
+						@include border-radius(0.5rem);
+						padding: 1rem;
+					}
+				}
 			}
 		}
 		.item{
@@ -27,7 +87,9 @@
 				top: 2rem;
 				width: 3rem;
 				height: 3rem;
-				border: 0.2rem solid #fff;
+				border: 0.2rem solid $color-body;
+				pointer-events: none;
+				text-align: center;
 				@include media(desktop){
 					width: 6rem;
 					height: 6rem;
@@ -36,6 +98,15 @@
 				}
 				img{
 					width: 100%;
+					@include border-radius(100%);
+					@include absolute-centered;
+				}
+				i{
+					font-size: 2rem;
+					@include absolute-centered;
+					@include media(desktop){
+						font-size: 3.5rem;
+					}
 				}
 			}
 			.content-wrapper{
@@ -46,12 +117,12 @@
 					width: 45%;
 				}
 				.btn{
-					margin-top: 2rem;
+					margin: 2rem 0;
 				}
 				.company{
 					font-weight: 600;
 					&:after{
-						content:'-';
+						content:'/';
 						margin-left: 0.4rem;
 					}
 				}
@@ -61,6 +132,65 @@
 				.place{
 					display: block;
 					font-style: italic;
+				}
+				a{
+					figure{
+						margin-top: 2rem;
+						position: relative;
+						img{
+							max-width: 100%;
+						}
+						figcaption{
+							@include full;
+							@include anim(350ms, ease-in-out);
+							opacity: 0;
+							i{
+								@include absolute-centered;
+								font-size: 4rem;
+							}
+						}
+					}
+					&:hover,
+					&:focus{
+						figure{
+							figcaption{
+								opacity: 0.75;
+							}
+						}
+					}
+				}
+				@include slick-nav($text-color);
+				blockquote{
+					position: relative;
+					margin: 1rem 0 1rem -2.55rem;
+					padding: 2rem 2rem 2rem 3rem;
+					@include media(desktop){
+						margin: 1rem 0;
+						padding: 2rem;
+					}
+					&:before,
+					&:after{
+						@include pseudo(inline-block, absolute, '\f1b2');
+						font-family: $zmdi;	
+						font-style: normal;
+						font-size: 2rem;
+						width: 100%;
+						left: 0;
+						text-align: right;
+					}
+					&:before{
+						transform: scale(-1,1);
+						top: 0;
+						border-top: 0.15rem solid $gray;
+						padding-right: 1rem;
+						@include media(desktop){
+							padding-right: 0;
+						}
+					}
+					&:after{
+						bottom: 0;
+						border-bottom: 0.15rem solid $gray;
+					}
 				}
 				.extra-info{
 					@include media(desktop){
@@ -74,6 +204,28 @@
 						.info{
 							margin-top: 1rem;
 						}
+
+						h2 ~ .info{
+							margin-top: auto;
+						}
+					}
+				}
+				.quote-author{
+					display: block;
+					font-style: italic;
+					font-weight: 700;
+					text-align: right;
+				}
+				.quote-date{
+					display: block;
+					font-style: italic;
+					font-size: 90%;
+					text-align: right;
+				}
+				.magazines{
+					margin: 2rem 0;
+					img{
+						pointer-events: none;
 					}
 				}
 			}

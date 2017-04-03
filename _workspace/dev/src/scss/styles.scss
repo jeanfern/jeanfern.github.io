@@ -22,15 +22,10 @@
 	- Variables
 	- Mixins
 2. PRESETS
-	- Reset
 	- Bootstrap v3.3.7 (Grids, Tables and Responsive utilities)
+	- Reset
 3. FONTS
 	- Basic Arrows
-	- Google Font Work Sans
-	- Google Font Bitter
-	- Google Font Inconsolata
-	- Font Awesome v.4.7.0
-	- Material Design Iconic Font v.2.2.0
 4. BASICS
 	- Text
 	- Buttons
@@ -38,6 +33,8 @@
 5. MODULES
 	- Landing Page
 	- Header
+	- Banner
+	- About Me
 	- Timeline
 	- Footer
 =============================================================
@@ -58,11 +55,6 @@
 >> 3. FONTS
 ========================================================== */
 @import "fonts/_basicarrows.scss";
-@import "http://fonts.googleapis.com/css?family=Work+Sans:100,300,400,700,900";
-@import "http://fonts.googleapis.com/css?family=Bitter:400,400i,700";
-@import "http://fonts.googleapis.com/css?family=Inconsolata:400,700";
-@import "http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
-@import "https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css";
 /* ==========================================================
 >> 4. BASICS
 ========================================================== */
@@ -72,7 +64,8 @@
 /* ==========================================================
 >> 5. MODULES
 ========================================================== */
-@import "modules/_landing.scss";
 @import "modules/_header.scss";
+@import "modules/_banner.scss";
+@import "modules/_aboutme.scss";
 @import "modules/_timeline.scss";
 @import "modules/_footer.scss";

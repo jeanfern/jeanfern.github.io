@@ -1,4 +1,3 @@
-// _text.scss
 /* ==========================================================
 >> TEXT
 ========================================================== */ 
@@ -6,7 +5,7 @@
 	outline:none;
 }
 body, html{
-	@include font($font-base,$font-size-base,$text-color,$font-base-weight,1.5,0.25rem,false);
+	@include font($font-base,$font-size-base,$text-color,$font-base-weight,1.5,0.1rem,false);
 	background: $color-body;
 	@include media(phablet, max){
 		font-size: round(($font-size-base*0.85));
@@ -44,27 +43,30 @@ em{
 small{
 	font-size: 50%;
 }
+blockquote{
+	font-style: italic;
+}
 .text-area{
 	h1, h2, h3, h4, h5, h6{
 	padding-top:$spacing-base / 2;
 	padding-bottom:$spacing-base / 2;
 	}
 	p{
-	padding-top:$spacing-base / 4;
-	padding-bottom:$spacing-base / 4;
+	padding-top:$spacing-base / 2;
+	padding-bottom:$spacing-base / 2;
 	}
 	ul{
 		li{
 			list-style:inside disc;
-			padding-top:$spacing-base / 4;
-			padding-bottom:$spacing-base / 4;
+			padding-top:$spacing-base / 2;
+			padding-bottom:$spacing-base / 2;
 		}
 	}
 	ol{
 		li{
 			list-style:inside decimal;
-			padding-top:$spacing-base / 4;
-			padding-bottom:$spacing-base / 4;
+			padding-top:$spacing-base / 2;
+			padding-bottom:$spacing-base / 2;
 		}
 	}
 }

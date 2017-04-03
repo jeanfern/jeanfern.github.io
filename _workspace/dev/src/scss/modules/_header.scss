@@ -1,0 +1,149 @@
+// ==========================================================
+//>> HEADER
+// ==========================================================
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #000;
+	z-index: z('header');
+	@include anim(1s, ease-in-out);
+	.home &{
+		background: transparent;
+		@include media(tablet-small, max){
+			background: #000;
+		}
+	}
+	.scrolled &{
+		background: #fff;
+		@include box-shadow(0,0.1rem,1rem,0,rgba(#000,0.15));
+	}
+	.opened-menu &{
+		background: rgba(#000, 0.85);
+	}
+	.container-wrapper{
+		position: relative;
+		width: 90%;
+		max-width: 1600px;
+		margin: auto;
+		height: 5rem;
+		padding: 1rem 0;
+		.logo{
+			display: inline-block;
+			font-size: 0;
+			a{
+				display: block;
+				.symbol,
+				.full-logo{
+					display: inline-block;
+					height: 3rem;
+					position: absolute;
+					top: 50%;
+					left: 0;
+					margin-top: -1.5rem;
+				}
+				.full-logo{
+					@include animate(1s, fadeInLeft);
+					.scrolled &{
+						@include animate(0.5s, fadeOutLeft);
+					}
+					.opened-menu &{
+						@include animate(1s, fadeInLeft);
+					}
+				}
+				.symbol{
+					@include animate(0.5s, fadeOutLeft);
+					.scrolled &{
+						@include animate(1s, fadeInLeft);
+					}
+					.opened-menu &{
+						@include animate(0.5s, fadeOutLeft);
+					}
+				}
+			}
+		}
+		.btn-menu{
+			@include btn-menu(#fff);
+			position: absolute;
+			display: inline-block;
+			top: 50%;
+			right: 0;
+			cursor: pointer;
+			@include translate(0, -50%);
+			@include animate(1s,fadeIn);
+			&:hover,
+			&:focus{
+				span{
+					background-color: $yellow;
+				}
+			}
+			.scrolled &{
+				span{
+					background-color: #000;
+				}
+				&:hover,
+				&:focus{
+					span{
+						background-color: $yellow;
+					}
+				}
+			}
+			.opened-menu &{
+				span{
+					background-color: #fff;
+				}
+				&:hover,
+				&:focus{
+					span{
+						background-color: $yellow;
+					}
+				}
+			}
+		}
+	}
+	.menu-wrapper{
+		position: relative;
+		width: 90%;
+		max-width: 1600px;
+		max-height: 100%;
+		margin: auto;
+		text-align: right;
+		@include anim(250ms, ease-in-out);
+		padding: 0;
+		.opened-menu &{
+			padding: 0 0 2rem 0;
+		}
+		.menu{
+			right: 1rem;
+			display: none;
+			text-align: right;
+			ul{
+				display: inline-block;
+				li{
+					@include animate(1s, fadeOutRight);
+					display: block;
+					.opened-menu &{
+						@include animate(1s, fadeInRight);
+						display: block;	
+					}
+					display: block;
+					a{
+						padding: 0.5rem 0;
+						display: inline-block;
+						color: #fff;
+						vertical-align: middle;
+						i{
+							margin-left: 0.5rem;
+						}
+						&:hover,
+						&:focus{
+							font-size: 1.25rem;
+							color: $yellow;
+						}
+					}
+				}
+			}
+		}
+	}
+}

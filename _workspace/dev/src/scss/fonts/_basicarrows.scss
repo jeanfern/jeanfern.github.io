@@ -8,20 +8,20 @@
   src: url("../fonts/basicarrows/basicarrows.eot?#iefix") format("embedded-opentype"),
        url("../fonts/basicarrows/basicarrows.woff") format("woff"),
        url("../fonts/basicarrows/basicarrows.ttf") format("truetype"),
-       url("../fonts/basicarrows/basicarrows.svg") format("svg");
+       url("../fonts/basicarrows/basicarrows.svg#Flaticon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "Basic Arrows";
-    src: url("../fonts/basiscarrows/basicarrows.svg") format("svg");
+    src: url("../fonts/basiscarrows/basicarrows.svg#Flaticon") format("svg");
   }
 }
 
 .ba:before{
   display: inline-block;
-  font-family: "Arrows";
+  font-family: "Basic Arrows";
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -40,6 +40,7 @@
 .ba-right:before { content: "\f103"; }
 .ba-up:before { content: "\f104"; }
 
+$ba: "Basic Arrows";
 $ba-close: "\f100";
 $ba-down: "\f101";
 $ba-left: "\f102";
