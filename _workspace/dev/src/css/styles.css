@@ -22,15 +22,10 @@
 	- Variables
 	- Mixins
 2. PRESETS
-	- Reset
 	- Bootstrap v3.3.7 (Grids, Tables and Responsive utilities)
+	- Reset
 3. FONTS
 	- Basic Arrows
-	- Google Font Work Sans
-	- Google Font Bitter
-	- Google Font Inconsolata
-	- Font Awesome v.4.7.0
-	- Material Design Iconic Font v.2.2.0
 4. BASICS
 	- Text
 	- Buttons
@@ -1711,63 +1706,6 @@ blockquote {
 /* ==========================================================
 >> 5. MODULES
 ========================================================== */
-/* ==========================================================
->> LANDING PAGE
-========================================================== */
-.landing-page {
-  position: relative;
-  overflow: hidden; }
-  .landing-page .container-wrapper {
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%); }
-    .landing-page .container-wrapper h1 {
-      font-size: 0;
-      background: url(../img/logo/logo-white.svg) no-repeat center center;
-      padding-top: 18.82353%; }
-    .landing-page .container-wrapper .social {
-      margin-top: 1rem; }
-      .landing-page .container-wrapper .social ul li {
-        display: inline-block;
-        font-size: 150%; }
-        .landing-page .container-wrapper .social ul li a {
-          position: relative; }
-          .landing-page .container-wrapper .social ul li a .zmdi-hc-inverse {
-            color: #fff; }
-          .landing-page .container-wrapper .social ul li a:after {
-            content: attr(alt);
-            display: inline-block;
-            position: absolute;
-            left: 50%;
-            bottom: -2.75rem;
-            -webkit-transform: translate(-50%, 0);
-            -moz-transform: translate(-50%, 0);
-            -ms-transform: translate(-50%, 0);
-            -o-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-            font-size: 70%;
-            color: #fff;
-            font-weight: 500;
-            text-transform: uppercase;
-            -webkit-transition: 350ms ease-in-out;
-            -moz-transition: 350ms ease-in-out;
-            -o-transition: 350ms ease-in-out;
-            -ms-transition: 350ms ease-in-out;
-            transition: 350ms ease-in-out;
-            opacity: 0; }
-          .landing-page .container-wrapper .social ul li a:hover {
-            color: rgba(255, 255, 255, 0.5); }
-            .landing-page .container-wrapper .social ul li a:hover:after {
-              opacity: 1; }
-
 header {
   position: fixed;
   top: 0;
