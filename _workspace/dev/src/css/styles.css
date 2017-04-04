@@ -37,6 +37,7 @@
 	- About Me
 	- Timeline
 	- Footer
+	- Portfolio
 =============================================================
 
 ========================================================== */
@@ -1576,6 +1577,8 @@ blockquote {
   color: #4688F1; }
   .blue-text h1, .blue-text h2, .blue-text h3, .blue-text h4, .blue-text h5, .blue-text h6 {
     color: #4688F1; }
+  .blue-text a {
+    color: #4688F1; }
 
 .red {
   background-color: #E9453C; }
@@ -1583,6 +1586,8 @@ blockquote {
 .red-text {
   color: #E9453C; }
   .red-text h1, .red-text h2, .red-text h3, .red-text h4, .red-text h5, .red-text h6 {
+    color: #E9453C; }
+  .red-text a {
     color: #E9453C; }
 
 .yellow {
@@ -1592,6 +1597,8 @@ blockquote {
   color: #FABC2D; }
   .yellow-text h1, .yellow-text h2, .yellow-text h3, .yellow-text h4, .yellow-text h5, .yellow-text h6 {
     color: #FABC2D; }
+  .yellow-text a {
+    color: #FABC2D; }
 
 .green {
   background-color: #3BA757; }
@@ -1599,6 +1606,8 @@ blockquote {
 .green-text {
   color: #3BA757; }
   .green-text h1, .green-text h2, .green-text h3, .green-text h4, .green-text h5, .green-text h6 {
+    color: #3BA757; }
+  .green-text a {
     color: #3BA757; }
 
 .gray {
@@ -1608,6 +1617,8 @@ blockquote {
   color: #F2F0EB; }
   .gray-text h1, .gray-text h2, .gray-text h3, .gray-text h4, .gray-text h5, .gray-text h6 {
     color: #F2F0EB; }
+  .gray-text a {
+    color: #F2F0EB; }
 
 .black {
   background-color: #000; }
@@ -1615,6 +1626,8 @@ blockquote {
 .black-text {
   color: #000; }
   .black-text h1, .black-text h2, .black-text h3, .black-text h4, .black-text h5, .black-text h6 {
+    color: #000; }
+  .black-text a {
     color: #000; }
 
 .white {
@@ -1624,6 +1637,8 @@ blockquote {
   color: #fff; }
   .white-text h1, .white-text h2, .white-text h3, .white-text h4, .white-text h5, .white-text h6 {
     color: #fff; }
+  .white-text a {
+    color: #fff; }
 
 .color-base {
   background-color: #FABC2D; }
@@ -1631,6 +1646,8 @@ blockquote {
 .color-base-text {
   color: #FABC2D; }
   .color-base-text h1, .color-base-text h2, .color-base-text h3, .color-base-text h4, .color-base-text h5, .color-base-text h6 {
+    color: #FABC2D; }
+  .color-base-text a {
     color: #FABC2D; }
 
 .color-alt {
@@ -1640,6 +1657,8 @@ blockquote {
   color: #4688F1; }
   .color-alt-text h1, .color-alt-text h2, .color-alt-text h3, .color-alt-text h4, .color-alt-text h5, .color-alt-text h6 {
     color: #4688F1; }
+  .color-alt-text a {
+    color: #4688F1; }
 
 .color-alt2 {
   background-color: #3BA757; }
@@ -1648,6 +1667,8 @@ blockquote {
   color: #3BA757; }
   .color-alt2-text h1, .color-alt2-text h2, .color-alt2-text h3, .color-alt2-text h4, .color-alt2-text h5, .color-alt2-text h6 {
     color: #3BA757; }
+  .color-alt2-text a {
+    color: #3BA757; }
 
 .color-alt3 {
   background-color: #E9453C; }
@@ -1655,6 +1676,8 @@ blockquote {
 .color-alt3-text {
   color: #E9453C; }
   .color-alt3-text h1, .color-alt3-text h2, .color-alt3-text h3, .color-alt3-text h4, .color-alt3-text h5, .color-alt3-text h6 {
+    color: #E9453C; }
+  .color-alt3-text a {
     color: #E9453C; }
 
 .lg-backdrop {
@@ -1711,18 +1734,16 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: #000;
   z-index: 3;
   -webkit-transition: 1s ease-in-out;
   -moz-transition: 1s ease-in-out;
   -o-transition: 1s ease-in-out;
   -ms-transition: 1s ease-in-out;
-  transition: 1s ease-in-out; }
-  .home header {
-    background: transparent; }
-    @media only screen and (max-width: 639px) {
-      .home header {
-        background: #000; } }
+  transition: 1s ease-in-out;
+  background: transparent; }
+  @media only screen and (max-width: 639px) {
+    header {
+      background: #000; } }
   .scrolled header {
     background: #fff;
     -webkit-box-shadow: 0 0.1rem 1rem 0 rgba(0, 0, 0, 0.15);
@@ -1937,6 +1958,9 @@ header {
   @media only screen and (max-width: 1023px) {
     .banner {
       height: 200px; } }
+  @media only screen and (max-width: 1023px) {
+    .works .banner {
+      height: 250px; } }
   .banner:before {
     content: '';
     position: absolute;
@@ -1967,7 +1991,7 @@ header {
     width: 90%;
     margin: auto;
     text-align: center; }
-    .banner .container-wrapper h3 {
+    .banner .container-wrapper h1 {
       font-family: "Bitter", serif;
       color: #fff;
       font-size: 4rem;
@@ -2387,5 +2411,178 @@ footer {
         animation-fill-mode: both;
         -webkit-animation-name: tada;
         animation-name: tada; }
+
+.portfolio .portfolio-wrapper .port-row {
+  position: relative;
+  padding: 4rem 0; }
+  @media only screen and (max-width: 639px) {
+    .portfolio .portfolio-wrapper .port-row {
+      padding: 2rem 0; } }
+  .portfolio .portfolio-wrapper .port-row .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    opacity: 0.05; }
+
+.portfolio .portfolio-wrapper .carousel .container-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 960px;
+  margin: auto; }
+  .portfolio .portfolio-wrapper .carousel .container-wrapper .content-wrapper .text-area {
+    text-align: center; }
+    @media only screen and (min-width: 640px) {
+      .portfolio .portfolio-wrapper .carousel .container-wrapper .content-wrapper .text-area {
+        padding-right: 2rem; } }
+    .portfolio .portfolio-wrapper .carousel .container-wrapper .content-wrapper .text-area .btn {
+      margin-top: 2rem; }
+  .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper a figure {
+    margin-top: 2rem;
+    position: relative; }
+    .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper a figure img {
+      max-width: 100%;
+      margin: auto; }
+    .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper a figure figcaption {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: 350ms ease-in-out;
+      -moz-transition: 350ms ease-in-out;
+      -o-transition: 350ms ease-in-out;
+      -ms-transition: 350ms ease-in-out;
+      transition: 350ms ease-in-out;
+      opacity: 0; }
+      .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper a figure figcaption i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 4rem; }
+  .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper a:hover figure figcaption, .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper a:focus figure figcaption {
+    opacity: 0.75; }
+  .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper .add-carousel-duo figure {
+    padding: 0 0.5rem; }
+  .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper .slick-arrow {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    z-index: 2;
+    font-size: 0;
+    border: 0;
+    margin: 0;
+    padding: 1rem 0.5rem;
+    background: rgba(242, 240, 235, 0.8);
+    text-color: #000;
+    -webkit-transition: 350ms ease-in-out;
+    -moz-transition: 350ms ease-in-out;
+    -o-transition: 350ms ease-in-out;
+    -ms-transition: 350ms ease-in-out;
+    transition: 350ms ease-in-out; }
+    .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper .slick-arrow:before {
+      content: "";
+      display: inline-block;
+      position: relative;
+      font-family: "Basic Arrows";
+      font-size: 2rem;
+      color: #000;
+      line-height: 1;
+      vertical-align: middle; }
+    .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper .slick-arrow.slick-prev {
+      left: 0; }
+      .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper .slick-arrow.slick-prev:before {
+        content: ""; }
+    .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper .slick-arrow.slick-next {
+      right: 0; }
+      .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper .slick-arrow.slick-next:before {
+        content: ""; }
+    .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper .slick-arrow:hover, .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper .slick-arrow:focus {
+      background: #000; }
+      .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper .slick-arrow:hover:before, .portfolio .portfolio-wrapper .carousel .container-wrapper .carousel-wrapper .slick-arrow:focus:before {
+        color: #fff; }
+
+.portfolio .portfolio-wrapper .laptop .container-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 960px;
+  margin: auto; }
+  .portfolio .portfolio-wrapper .laptop .container-wrapper .content-wrapper .text-area {
+    text-align: center; }
+    @media only screen and (min-width: 640px) {
+      .portfolio .portfolio-wrapper .laptop .container-wrapper .content-wrapper .text-area {
+        padding-right: 2rem; } }
+    .portfolio .portfolio-wrapper .laptop .container-wrapper .content-wrapper .text-area .btn {
+      margin-top: 2rem; }
+  .portfolio .portfolio-wrapper .laptop .container-wrapper .laptop-wrapper {
+    margin-top: 2rem;
+    position: relative;
+    width: 100%; }
+    .portfolio .portfolio-wrapper .laptop .container-wrapper .laptop-wrapper .screen {
+      position: absolute;
+      top: 10.5%;
+      left: 14%;
+      right: 14.2%;
+      bottom: 14.75%; }
+      .portfolio .portfolio-wrapper .laptop .container-wrapper .laptop-wrapper .screen .mCSB_inside > .mCSB_container {
+        margin-right: 0; }
+      .portfolio .portfolio-wrapper .laptop .container-wrapper .laptop-wrapper .screen img {
+        width: 100%; }
+
+.portfolio .portfolio-wrapper .mobile .container-wrapper {
+  position: relative;
+  width: 90%;
+  max-width: 960px;
+  margin: auto; }
+  .portfolio .portfolio-wrapper .mobile .container-wrapper .content-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    width: 70%; }
+    @media only screen and (max-width: 639px) {
+      .portfolio .portfolio-wrapper .mobile .container-wrapper .content-wrapper {
+        width: 100%;
+        display: block; } }
+    .portfolio .portfolio-wrapper .mobile .container-wrapper .content-wrapper .text-area {
+      text-align: center; }
+      @media only screen and (min-width: 640px) {
+        .portfolio .portfolio-wrapper .mobile .container-wrapper .content-wrapper .text-area {
+          padding-right: 2rem; } }
+      .portfolio .portfolio-wrapper .mobile .container-wrapper .content-wrapper .text-area .btn {
+        margin-top: 2rem; }
+  .portfolio .portfolio-wrapper .mobile .container-wrapper .mobile-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+    position: relative; }
+    @media only screen and (max-width: 639px) {
+      .portfolio .portfolio-wrapper .mobile .container-wrapper .mobile-wrapper {
+        width: 200px;
+        display: block;
+        margin: 2rem auto auto auto; } }
+    .portfolio .portfolio-wrapper .mobile .container-wrapper .mobile-wrapper .screen {
+      position: absolute;
+      top: 13.45%;
+      left: 7.85%;
+      right: 8.85%;
+      bottom: 15.7%; }
+      .portfolio .portfolio-wrapper .mobile .container-wrapper .mobile-wrapper .screen .mCSB_inside > .mCSB_container {
+        margin-right: 0; }
+      .portfolio .portfolio-wrapper .mobile .container-wrapper .mobile-wrapper .screen img {
+        width: 100%; }
 
 /*# sourceMappingURL=maps/styles.css.map */

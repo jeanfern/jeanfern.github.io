@@ -9,6 +9,11 @@
 	@include media(tablet-wide, max){
 		height: 200px;
 	}
+	.works &{
+		@include media(tablet-wide, max){
+			height: 250px;
+		}
+	}
 	&:before{
 		content: '';
 		position: absolute;
@@ -33,7 +38,7 @@
 	    width: 90%;
 	    margin: auto;
 	    text-align: center;
-	    h3{
+	    h1{
 	    	font-family: $font-alt;
 	    	color: #fff;
 	    	font-size: 4rem;

@@ -168,6 +168,21 @@ $(document).ready(function(){
     lazyLoad: 'progressive',
     adaptiveHeight: true,
   });
+  $('.add-carousel-duo').slick({
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    lazyLoad: 'progressive',
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 560,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  });
   // =========================== */
   // Menu
   // =========================== */

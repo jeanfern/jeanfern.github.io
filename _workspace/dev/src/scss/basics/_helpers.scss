@@ -9,6 +9,9 @@
 	h1,h2,h3,h4,h5,h6{
 		color: $blue;
 	}
+	a{
+		color: $blue;
+	}
 }
 .red{
 	background-color: $red;
@@ -16,6 +19,9 @@
 .red-text{
 	color: $red;
 	h1,h2,h3,h4,h5,h6{
+		color: $red;
+	}
+	a{
 		color: $red;
 	}
 }
@@ -27,6 +33,9 @@
 	h1,h2,h3,h4,h5,h6{
 		color: $yellow;
 	}
+	a{
+		color: $yellow;
+	}
 }
 .green{
 	background-color: $green;
@@ -34,6 +43,9 @@
 .green-text{
 	color: $green;
 	h1,h2,h3,h4,h5,h6{
+		color: $green;
+	}
+	a{
 		color: $green;
 	}
 }
@@ -45,6 +57,9 @@
 	h1,h2,h3,h4,h5,h6{
 		color: $gray;
 	}
+	a{
+		color: $gray;
+	}
 }
 .black{
 	background-color: #000;
@@ -52,6 +67,9 @@
 .black-text{
 	color: #000;
 	h1,h2,h3,h4,h5,h6{
+		color: #000;
+	}
+	a{
 		color: #000;
 	}
 }
@@ -63,6 +81,9 @@
 	h1,h2,h3,h4,h5,h6{
 		color: #fff;
 	}
+	a{
+		color: #fff;
+	}
 }
 .color-base{
 	background-color: $color-base;
@@ -70,6 +91,9 @@
 .color-base-text{
 	color: $color-base;
 	h1,h2,h3,h4,h5,h6{
+		color: $color-base;
+	}
+	a{
 		color: $color-base;
 	}
 }
@@ -81,6 +105,9 @@
 	h1,h2,h3,h4,h5,h6{
 		color: $color-alt;
 	}
+	a{
+		color: $color-alt;
+	}
 }
 .color-alt2{
 	background-color: $color-alt2;
@@ -90,6 +117,9 @@
 	h1,h2,h3,h4,h5,h6{
 		color: $color-alt2;
 	}
+	a{
+		color: $color-alt2;
+	}
 }
 .color-alt3{
 	background-color: $color-alt3;
@@ -97,6 +127,9 @@
 .color-alt3-text{
 	color: $color-alt3;
 	h1,h2,h3,h4,h5,h6{
+		color: $color-alt3;
+	}
+	a{
 		color: $color-alt3;
 	}
 }
